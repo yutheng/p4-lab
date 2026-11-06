@@ -1,0 +1,11 @@
+=== BASELINE PACKET COUNT (BEFORE LOOP PACKET) ===
+logs/s1.txt:75
+logs/s2.txt:58
+
+=== POST-LOOP COUNT (STOPPED AT HOP 64) ===
+logs/s1.txt:107
+logs/s2.txt:90
+
+=== COUNT AFTER 5 SECONDS (CONFIRMS LOOP TERMINATED) ===
+logs/s1.txt:107
+logs/s2.txt:90

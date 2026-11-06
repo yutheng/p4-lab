@@ -1,0 +1,17 @@
+=== H2 TUNNEL RECEIVE LOG ===
+Listening on h2-eth0...
+Received (tunnelled, dst_id=2, hop_limit=62) from 10.15.0.1 to 10.15.0.2, TTL 64: 'test-h2-tunnel'
+Received (tunnelled, dst_id=2, hop_limit=8) from 10.15.0.1 to 10.15.0.2, TTL 64: 'test-h2-tunnel'
+
+=== H3 TUNNEL RECEIVE LOG ===
+Listening on h3-eth0...
+Received (tunnelled, dst_id=3, hop_limit=62) from 10.15.0.1 to 10.15.0.3, TTL 64: 'test-h3-tunnel'
+
+=== IPV4 PING TEST ===
+PING 10.15.0.3 (10.15.0.3) 56(84) bytes of data.
+64 bytes from 10.15.0.3: icmp_seq=1 ttl=62 time=5.99 ms
+64 bytes from 10.15.0.3: icmp_seq=2 ttl=62 time=8.59 ms
+
+--- 10.15.0.3 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1001ms
+rtt min/avg/max/mdev = 5.986/7.288/8.590/1.302 ms
