@@ -1,0 +1,35 @@
+=== Modifying s2 Table Entry 2 to Port 1 ===
+Done
+Modifying entry 2 for exact match table MyIngress.myTunnel_exact
+
+=== s2 Table Dump After Modification ===
+Done
+==========
+TABLE ENTRIES
+**********
+Dumping entry 0x0
+Match key:
+* myTunnel.dst_id     : EXACT     0001
+Action entry: MyIngress.myTunnel_forward - 01
+**********
+Dumping entry 0x1
+Match key:
+* myTunnel.dst_id     : EXACT     0002
+Action entry: MyIngress.myTunnel_forward - 02
+**********
+Dumping entry 0x2
+Match key:
+* myTunnel.dst_id     : EXACT     0003
+Action entry: MyIngress.myTunnel_forward - 01
+==========
+Dumping default entry
+Action entry: MyIngress.drop - 
+==========
+
+=== Packet Counts Immediately After Sending Loop Packet ===
+logs/s1.txt:603
+logs/s2.txt:602
+
+=== Packet Counts 5 Seconds Later ===
+logs/s1.txt:1332
+logs/s2.txt:1331

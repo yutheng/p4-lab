@@ -1,0 +1,25 @@
+=== MIXED: s1 = tunnel.p4 (new), s2 = tunnel_v1.p4 (old) ===
+=== CAPTURE ON H2 ===
+tcpdump: verbose output suppressed, use -v[v]... for full protocol decode
+listening on h2-eth0, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+16:37:21.368199 00:00:00:00:00:01 > ff:ff:ff:ff:ff:ff, ethertype Unknown (0x1212), length 51: 
+	0x0000:  ffff ffff ffff 0000 0000 0001 1212 3f08  ..............?.
+	0x0010:  0002 4500 0021 0001 0000 4011 66aa 0a0f  ..E..!....@.f...
+	0x0020:  0001 0a0f 0003 10e1 10e1 000d 8021 6d69  .............!mi
+	0x0030:  7865 64                                  xed
+1 packet captured
+1 packet received by filter
+0 packets dropped by kernel
+=== logs/h2.txt ===
+Listening on h2-eth0...
+Received (tunnelled, dst_id=2, hop_limit=63) from 10.15.0.1 to 10.15.0.3, TTL 64: 'mixed'
+Received (tunnelled, dst_id=2, hop_limit=63) from 10.15.0.1 to 10.15.0.3, TTL 64: 'mixed'
+=== LOOP: counts BEFORE sending ===
+logs/s1.txt:180
+logs/s2.txt:161
+=== LOOP: counts AFTER ===
+logs/s1.txt:244
+logs/s2.txt:224
+=== LOOP: counts 5 s LATER ===
+logs/s1.txt:244
+logs/s2.txt:224
